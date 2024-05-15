@@ -1,0 +1,41 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Dialog id="idDialog" title="Update Details">
+        <content>
+          <form:SimpleForm id="idSimpleForm" editable="true" layout="ResponsiveGridLayout">
+                <form:content>
+                    <Label id="idIdLabel" text="Id"/>
+                    <Input id="idIdInput" value="{oPayloadModel>/oPayload/Id}"/>
+
+                    <Label id="idProductNameLabel" text="Product Name"/>
+                    <Input id="idProductNameInput"  value="{oPayloadModel>/oPayload/ProductName}"/>
+
+                    <Label id="idQuantityLabel" text="Quantity"/>
+                    <Input id="idQuantityInput" value="{oPayloadModel>/oPayload/Quantity}"/>
+
+                    <Label id="idExtendedPriceLabel" text="Extended Price"/>
+                    <Input id="idExtendedPriceInput"  value="{oPayloadModel>/oPayload/ExtendedPrice}"/>
+
+                    <Label id="idShipperNameLabel" text="Shipper Name"/>
+                    <Input id="idShipperNameInput" value="{oPayloadModel>/oPayload/ShipperName}"/>
+
+                    <Label id="idShipperDateLabel" text="Shipper Date"/>
+                    <Input id="idShipperDateInput" value="{oPayloadModel>/oPayload/ShipperDate}"/>
+
+                    <Label id="idStatusLabel" text="Status"/>
+                    <Input id="idStatusInput"  value="{oPayloadModel>/oPayload/Status}"/>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button id="idSaveButton" text="Save" type="Accept" press="onSaveButtonPress"/>
+        </beginButton>
+        <endButton>
+            <Button id="idCancelButton" type="Reject" text="Cancel" press="onCancelButtonPress"/>
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

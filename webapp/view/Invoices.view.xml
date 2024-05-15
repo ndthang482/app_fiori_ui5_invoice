@@ -1,0 +1,163 @@
+<mvc:View
+    controllerName="com.demo.app.odatademoapp.controller.Invoices"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <Image
+        id="idImage"
+        src="/css/logo.jpg"
+        width="1.5%"
+        alt="Logo"
+        decorative="false"
+        densityAware="false"
+    />
+    <Page
+        id="idPage"
+        title="{i18n>title}"
+    >
+            <Table
+                id="idPODataTable"
+                items="{
+                    path: 'oPOJSONModel>/POData',
+                    sorter: {
+                        path: 'ShipperName',
+                        group: true
+                    }
+                }"
+            >
+                <headerToolbar>
+                    <Toolbar id="idToolbar">
+                        <ToolbarSpacer id="idToolbarSpacer" />
+                        <SearchField
+                            id="idSearchField"
+                            width="40%"
+                            search="onSearchFieldSearch"
+                            ariaLabelledBy="searchFieldLabel"
+                            ariaDescribedBy="searchFieldDescription"
+                            placeholder="{i18n>searchFieldPlaceHolder}"
+                        />
+                        <Button
+                            id="idSortButton"
+                            class="buttonSort"
+                            icon="sap-icon://sort"
+                            text="Sort"
+                            press="onSortButtonPress"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="idColumn">
+                        <Label
+                            id="idIDLabel"
+                            text="ID"
+                        />
+                    </Column>
+                    <Column id="id_1_Column">
+                        <Label
+                            id="idProductNameLabel"
+                            text="ProductName"
+                        />
+                    </Column>
+                    <Column id="id_2_Column">
+                        <Label
+                            id="idQuantityLabel"
+                            text="Quantity"
+                        />
+                    </Column>
+                    <Column id="id_3_Column">
+                        <Label
+                            id="idExtendedPriceLabel"
+                            text="ExtendedPrice"
+                        />
+                    </Column>
+                    <Column id="id_4_Column">
+                        <Label
+                            id="idShipperNameLabel"
+                            text="ShipperName"
+                        />
+                    </Column>
+                    <Column id="id_5_Column">
+                        <Label
+                            id="idShipperDateLabel"
+                            text="ShipperDate"
+                        />
+                    </Column>
+                    <Column id="id_6_Column">
+                        <Label
+                            id="idStatusLabel"
+                            text="Status"
+                        />
+                    </Column>
+                    <Column id="id_7_Column">
+                        <Label
+                            class="column7"
+                            id="idActionLabel"
+                            text="Action"
+                        />
+                    </Column>
+                    <Column id="id_8_Column">
+                        <Button
+                            class="column8"
+                            id="idAddButton"
+                            icon="sap-icon://add"
+                            text="Add"
+                            press="onAddButtonPress"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="idColumnListItem">
+                        <cells>
+                            <Text
+                                id="idIdText"
+                                text="{oPOJSONModel>Id}"
+                            />
+                            <Text
+                                id="idProductNameText"
+                                text="{oPOJSONModel>ProductName}"
+                            />
+                            <Text
+                                id="idQuantityText"
+                                text="{oPOJSONModel>Quantity}"
+                            />
+                            <Text
+                                id="idExtendedPriceText"
+                                text="{oPOJSONModel>ExtendedPrice}"
+                            />
+                            <Text
+                                id="idShipperNameText"
+                                text="{oPOJSONModel>ShipperName}"
+                            />
+                            <Text
+                                id="idShipperDateText"
+                                text="{oPOJSONModel>ShipperDate}"
+                            />
+                            <Text
+                                id="idStatusText"
+                                text="{oPOJSONModel>Status}"
+                            />
+                            <HBox id="idHBox">
+                                <Button
+                                    id="idEditButton"
+                                    class="sapUiTinyMarginEnd"
+                                    icon="sap-icon://edit"
+                                    text="Edit"
+                                    press="onEditButtonPress"
+                                />
+                                <Button
+                                    id="idDeleteButton"
+                                    icon="sap-icon://delete"
+                                    type="Reject"
+                                    text="Delete"
+                                    press="onDeleteButtonPress"
+                                />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <VBox id="idVBox" height="50px" />
+            <!-- Spacer added here to prevent last row from being covered -->
+    </Page>
+</mvc:View>

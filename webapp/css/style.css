@@ -1,0 +1,15 @@
+/* Enter your custom styles here */
+
+.column8 {
+    margin-left: 40px; 
+}
+.column7 {
+    margin-left: 42px; 
+}
+.sapMBarChild {
+    right: 40px;
+}
+.sapUiSizeCompact .sapMSFF {
+    left: 200px;
+    width: 57%;
+}   
